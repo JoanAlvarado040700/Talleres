@@ -5,10 +5,13 @@
 </p>
 
 <div>
+<button><a href="/<%= @name %>/edit">Editar taller</a> </button><br> <br>
 <form method="post" action="/<%= @name%>">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" name="delete" value="Borrar taller">
 </form>
 </div>
 <br>
+<button>
 <a href="/">Volver a inicio</a> 
+</button>

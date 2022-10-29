@@ -3,7 +3,7 @@ require "sinatra"
 def workshops_content(name) #Abrir un archivo usando el metodo File.read
     File.read("workshops/#{name}.txt")
 
-rescue Erno::ENOENT
+rescue Errno::ENOENT
     return nil
 end
 
@@ -34,6 +34,11 @@ get '/:name' do
     erb :workshops
 end
 
+get '/:name/edit' do
+    @name =params[:name]
+    @descriptions = workshops_content(@name)
+    erb :edit
+end
 post '/create' do
     save_work(params["name"],params["description"])
     @message ="agregado exitosamente"
@@ -44,4 +49,10 @@ delete '/:name' do
     delete_workshops(params[:name])
     @message = "borrado exitosamente"
     erb :message
+end
+
+put '/:name' do
+    save_work(params[:name], params["description"])
+    redirect CGI.escape("/#{params[:name]}")
+    
 end
