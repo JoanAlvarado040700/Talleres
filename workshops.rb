@@ -7,6 +7,11 @@ rescue Erno::ENOENT
     return nil
 end
 
+def save_work(name,description)
+    File.open("workshops/#{name}.txt", "w") do |file|
+    file.print(description)
+    end
+end
 
 get '/' do
 
@@ -25,3 +30,7 @@ get '/:name' do
     erb :workshops
 end
 
+post '/create' do
+    save_work(params["name"],params["description"])
+    erb :new
+end
