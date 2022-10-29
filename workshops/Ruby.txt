@@ -1,0 +1,2 @@
+Bienvenido a este curso de Ruby uno de los lenguajes de 
+programacion para el desarrollo web.

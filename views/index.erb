@@ -1,0 +1,9 @@
+<h1> Talleres de la temporada!</h1>
+
+<% @files.drop(2).each do |file|%>
+    <ul> 
+        <li>
+            <a href="/<%=File.basename(file, ".*") %>"> <%=File.basename(file, ".*") %></a>
+        </li>
+    </ul>
+<%end%>
