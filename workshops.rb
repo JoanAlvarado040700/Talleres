@@ -14,10 +14,14 @@ get '/' do
     erb :index
 
 end
-
+get '/create' do
+    erb :create
+    
+end
 
 get '/:name' do
     @name =params[:name]
     @descriptions = workshops_content(@name)
     erb :workshops
 end
+
