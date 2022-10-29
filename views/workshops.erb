@@ -3,3 +3,12 @@
 <p> 
     <%= @descriptions %>
 </p>
+
+<div>
+<form method="post" action="/<%= @name%>">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" name="delete" value="Borrar taller">
+</form>
+</div>
+<br>
+<a href="/">Volver a inicio</a> 

@@ -1,1 +1,1 @@
-Este es un nuevo curso de Java 
+Bienvenido a este curso de java
